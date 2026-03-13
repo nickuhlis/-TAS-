@@ -1,0 +1,24 @@
+local functions = {
+    ["1"] = "printidentity()",
+    ["2"] = "getgenv()",
+    ["3"] = "getrawmetatable(workspace)",
+}
+
+print("=== Matcha Function Menu ===")
+print("[1] printidentity()")
+print("[2] getgenv()")
+print("[3] getrawmetatable(workspace)")
+print("=============================")
+
+-- Manually set the choice (Matcha cannot read input)
+local choice = "1" -- change this to test
+
+local code = functions[choice]
+
+if code then
+    print("> Running: " .. code)
+    local result = Matcha:Execute(code)
+    print(result)
+else
+    print("Invalid option.")
+end
